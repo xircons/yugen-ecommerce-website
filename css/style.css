@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Karla", sans-serif;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 body {
     background-color: #fff;
@@ -334,6 +338,11 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.factory-div1 img:hover{
+    transform: scale(1.01);
 }
 
 .factory-div2 {

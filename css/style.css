@@ -76,11 +76,49 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
+    animation: fadeIn 1.2s ease-in-out forwards;
 }
 
 .collection-parent img:hover {
     transform: scale(1.01);
+}
+
+.collection-text {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    font-size: 3vw;
+    color: #061d1b;
+    text-transform: uppercase;
+    animation: slideFadeIn 1.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .collection-parent img,
+    .collection-text {
+        animation: none;
+    }
 }
 
 .collection-div1 { grid-area: 1 / 1 / 2 / 2; }
@@ -127,7 +165,6 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #eeebe5;
-    /* margin-bottom: 2vw */
 }
 
 .bg-section::before {
@@ -206,6 +243,16 @@ body {
     min-height: 100%;
     margin-top: 5rem;
     overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    opacity: 0; /* Start invisible for fade-in */
+}
+
+.bg-div3 .counter,
+.bg-div4 .counter,
+.bg-div5 .counter,
+.bg-div6 .counter,
+.bg-div7 .counter {
+    display: inline-block;
 }
 
 .bg-div3 { grid-area: 2 / 1 / 3 / 2; }
@@ -230,6 +277,16 @@ body {
 .bg-div5-label { grid-area: 3 / 3 / 4 / 4; }
 .bg-div6-label { grid-area: 3 / 4 / 4 / 5; }
 .bg-div7-label { grid-area: 3 / 5 / 4 / 6; }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /* factory-section */
 .factory-section {
@@ -266,6 +323,9 @@ body {
     text-transform: uppercase;
     margin-top: -10px;
     overflow: hidden;
+    opacity: 0; /* Start invisible */
+    transform: translateY(30px); /* Start slightly below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
 }
 
 .factory-div1 img {
@@ -282,6 +342,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0; /* Start invisible */
+    transform: translateX(50px); /* Start 50px to the right */
+    transition: opacity 1.6s ease-in-out, transform 1.6s ease-in-out; /* Use transition instead of animation */
 }
 
 .factory-div2 h1 {
@@ -302,12 +365,61 @@ body {
 
 .factory-section-right .factory-div1 {
     grid-area: 1 / 3 / 2 / 6;
+    transform: translateY(30px); /* Start slightly below */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .factory-section-right .factory-div2 {
     margin-left: 12rem;
     grid-area: 1 / 1 / 2 / 3;
     text-align: left;
+    opacity: 0; /* Start invisible */
+    transform: translateX(-50px); /* Start 50px to the left */
+    transition: opacity 1.6s ease-in-out, transform 1.6s ease-in-out;
+}
+
+/* Class to trigger animations */
+.is-visible .factory-div1,
+.is-visible .factory-div2,
+.is-visible.factory-section-right .factory-div1,
+.is-visible.factory-section-right .factory-div2 {
+    opacity: 1;
+    transform: translateX(0) translateY(0); /* Reset transforms */
+}
+
+/* Animations for reference, but we'll use transitions */
+@keyframes slideFadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* contact-section */

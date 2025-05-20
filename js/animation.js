@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counter');
-    const speed = 500; //animation speed
+    const speed = 2000; //animation speed
 
     counters.forEach(counter => {
         const updateCount = () => {

@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Karla", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: #fff;
+}
+
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: 92vh;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeebe5;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 3vw;
+    text-transform: uppercase;
+    text-align: start;
+    line-height: 0.8;
+    animation: slideFadeIn 1.6s ease-in-out forwards;
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.exclusive-product {
+    position: relative;
+    width: 100%;
+    height: 92vh;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.exclusive-product {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exclusive-product-text {
+    font-size: 2vw;
+    font-weight: 400;
+    color: #061d1b;
+    text-align: center;
+    margin-bottom: 6rem;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.collection-parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: 0.5vw;
+    width: 100%;
+    margin-left: 1rem; /* Added 2rem margin on the left */
+    margin-right: 1rem; /* Added 2rem margin on the right */
+    max-width: calc(100% - 1.5rem); /* Ensure the grid respects the margins */
+}
+
+.collection-div {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.collection-parent img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.collection-parent img:hover {
+    transform: scale(1.01);
+}
+
+.explore-all {
+    display: inline-block;
+    padding: 1rem 2.25rem;
+    background-color: #061d1b;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+    margin-top: 6rem;
+    font-size: 1rem;
+}
+
+.explore-all:hover {
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

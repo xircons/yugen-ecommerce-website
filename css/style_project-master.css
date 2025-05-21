@@ -1,0 +1,215 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.project-container {
+    display: flex;
+    height: 92vh;
+    position: relative;
+    width: 98%;
+    overflow: hidden;
+}
+
+.left-column {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 6rem;
+    position: relative;
+    z-index: 10;
+}
+
+.style-title {
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-bottom: 6rem;
+    opacity: 0;
+    pointer-events: all;
+    cursor: pointer;
+    color: #333;
+    position: absolute;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s ease;
+    will-change: opacity, color;
+}
+
+.style-title:hover {
+    color: #000;
+}
+
+.style-title.active {
+    opacity: 1;
+}
+
+.image-column {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image {
+    position: absolute;
+    max-width: 85%;
+    max-height: 75%;
+    opacity: 0;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
+    will-change: transform, opacity, margin;
+    pointer-events: none;
+    visibility: hidden;
+    object-fit: cover;
+    margin-right: 6rem;
+    margin-left: 0;
+}
+
+.project-image.prev {
+    opacity: 1;
+    transform: translateY(-100%);
+    margin-bottom: 5rem;
+    margin-top: 0;
+    margin-right: 6rem;
+    visibility: visible;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-image.next {
+    opacity: 1;
+    transform: translateY(100%);
+    margin-top: 5rem;
+    margin-bottom: 0;
+    margin-right: 6rem;
+    visibility: visible;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-image.active {
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 6rem;
+    z-index: 2;
+    pointer-events: auto;
+    visibility: visible;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.navigation-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+}
+
+.nav-item-project {
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgba(6, 29, 27);
+    opacity: 0.8;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    will-change: opacity, color;
+    padding: 3px 0;
+    position: relative;
+    text-align: left;
+}
+
+.nav-item-project:hover {
+    color: rgba(6, 29, 27);
+    opacity: 0.5;
+}
+
+.nav-item-project.active {
+    color: rgba(6, 29, 27);
+    font-weight: 500;
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .style-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+    }
+    
+    .left-column {
+        width: 100%;
+        height: 20%;
+        margin-left: 2rem;
+        padding-top: 5%;
+        justify-content: flex-start;
+    }
+    
+    .style-title {
+        font-size: 36px;
+        position: absolute;
+        top: 10%;
+    }
+    
+    .image-column {
+        width: 100%;
+        height: 60%;
+    }
+    
+    .navigation-column {
+        width: 100%;
+        height: 20%;
+        position: relative;
+        margin-left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        padding: 0 5%;
+    }
+    
+    .nav-item-project {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+    
+    .nav-item-project.active {
+        opacity: 1;
+    }
+    
+    .project-image.prev {
+        margin-bottom: 2rem;
+        margin-right: 2rem;
+    }
+    
+    .project-image.next {
+        margin-top: 2rem;
+        margin-right: 2rem;
+    }
+    
+    .project-image.active {
+        margin-right: 2rem;
+    }
+}

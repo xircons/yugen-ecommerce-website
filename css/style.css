@@ -26,20 +26,6 @@ body {
     border-bottom: 1px solid #f0f0f0;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    margin-bottom: 1vw;
-}
-
-.header-404 {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 15vw;
-    border-bottom: 1px solid #f0f0f0;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .nav-left, .nav-right {
@@ -304,41 +290,6 @@ body {
         opacity: 1;
     }
 }
-
-/* 404 */
-.error-404 {
-    font-size: 5vw;
-    font-weight: 400;
-    color: #061d1b;
-    z-index: 1000;
-}
-
-.error-404 h1{
-    text-transform: uppercase;
-}
-
-.error-404 p{
-    text-align: center;
-    font-size: 1vw;
-    color: #414141;
-}
-
-.error-btn {
-    display: inline-block;
-    padding: 0.8rem 8rem;
-    background-color: #061d1b;
-    color: #fff;
-    text-decoration: none;
-    transition: opacity 0.2s ease-in-out;
-    align-self: flex-start;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-}
-
-.error-btn:hover {
-    opacity: 0.9;
-}
-
 
 /* factory-section */
 .factory-section {

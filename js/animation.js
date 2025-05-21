@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counter');
-    const speed = 2000; //animation speed
+    const speed = 2000; // animation speed
 
     counters.forEach(counter => {
         const updateCount = () => {
@@ -56,6 +56,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     factorySections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+// Existing scroll listener for overview-section
+document.addEventListener("scroll", () => {
+    const section = document.querySelector(".overview-section");
+    const rect = section.getBoundingClientRect();
+    if (rect.top >= 0 && rect.top <= window.innerHeight) {
+        section.classList.add("in-viewport");
+    }
+});
+
+// New Intersection Observer for featured-products-section
+document.addEventListener('DOMContentLoaded', () => {
+    const featuredSections = document.querySelectorAll('.featured-products-section');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the section is in view
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-viewport');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    featuredSections.forEach(section => {
         observer.observe(section);
     });
 });

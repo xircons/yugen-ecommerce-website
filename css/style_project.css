@@ -1,0 +1,313 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.main-project {
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding: 7.5rem 0 0 0;
+}
+
+.project-details {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0rem 8rem 0rem 8rem;
+    color: rgba(6, 29, 27, 0.8);
+}
+
+.project-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.project-by {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0.5rem 0 2rem 0;
+    opacity: 0.8;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5rem;
+    margin-top: auto;
+    margin-bottom: 2rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.meta-value {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.project-image-container {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image-container img {
+    width: 82%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Project Section */
+.project-section {
+    display: flex;
+    width: 100%;
+    margin-bottom: 12rem;
+}
+
+.project-text-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-text.static {
+    padding: 8rem 8rem 0 8rem;
+    position: static;
+    height: fit-content;
+    color: rgba(6, 29, 27, 1);
+}
+
+.project-text.sticky {
+    padding: 0 8rem 8rem 8rem;
+    position: static;
+    height: fit-content;
+    color: rgba(6, 29, 27, 1);
+}
+
+.project-text.sticky .project-description {
+    position: sticky;
+    top: 6rem;
+    z-index: 10;
+}
+
+.project-text.sticky {
+    position: sticky;
+    top: 7rem;
+    z-index: 11;
+}
+
+.project-description {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(6, 29, 27, 1);
+    max-width: 100%;
+}
+
+.project-description p {
+    margin: 0 0 2.5rem 0;
+}
+
+.project-images {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0rem 6rem 2rem 6rem;
+}
+
+.project-images img {
+    margin-bottom: 1rem;
+}
+
+.scroll-image {
+    width: 80%;
+    object-fit: cover;
+}
+
+.main-project {
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding: 7.5rem 0 12rem 0;
+}
+
+.project-details {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0rem 8rem 0rem 8rem;
+    color: rgba(6, 29, 27, 0.8);
+}
+
+.project-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.project-by {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0.5rem 0 2rem 0;
+    opacity: 0.8;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5rem;
+    margin-top: auto;
+    margin-bottom: 2rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.meta-value {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.project-image-container {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image-container img {
+    width: 82%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* another-project */
+.featured-products-section {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    padding: 0rem 7rem;
+    }
+
+.featured-products-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.collection-parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: 0.5vw;
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: calc(100% - 1.5rem);
+    }
+
+.collection-div {
+    width: 100%;
+    height: 0;
+    padding-bottom: 110%;
+    position: relative;
+    overflow: hidden;
+    }
+
+.collection-div .product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255);
+    padding: 1rem 0;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.product-designer {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: rgba(6, 29, 27, 0.8);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.product-name {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #061d1b;
+    margin-bottom: 0.3rem;
+}
+
+.collection-parent img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    opacity: 1;
+}
+
+.collection-parent img:hover {
+    transform: scale(1.01);
+}
+
+.collection-parent .collection-div:first-child img {
+    margin-bottom: 2rem;
+}
+
+.brand-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+    color: #061d1b;
+    text-transform: uppercase;
+    text-align: left;
+    margin: -5rem 3rem 3rem 1rem;
+    opacity: 1;
+}
+
+.brand-title a {
+    color: #061d1b;
+}

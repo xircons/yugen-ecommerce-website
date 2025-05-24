@@ -97,7 +97,8 @@ document.querySelectorAll('.tp-image').forEach(img => {
                 const urls = {
                     '0': 'gig.html',
                     '1': 'smoke-lake-cabin.html',
-                    '2': 'pine-island-cottage.html'
+                    '2': 'pine-island-cottage.html',
+                    '3': 'house-of-horns.html'
                 };
                 window.location.href = urls[index];
             });

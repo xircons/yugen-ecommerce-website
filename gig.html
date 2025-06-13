@@ -9,18 +9,27 @@
     <link rel="stylesheet" href="css/style_project.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-left">
-            <a href="home.html" class="nav-item active">Home</a>
-            <a href="products.html" class="nav-item">Product</a>
-            <a href="project-master.html" class="nav-item">Project</a>
-        </nav>
-        <div class="logo"><a href="home.html"><img src="images/logo/logo.png" alt=""></a></div>
-        <nav class="nav-right">
-            <a href="store.html" class="nav-item">Shop</a>
-            <a href="gallery.html" class="nav-item">Gallery</a>
-            <a href="contact.html" class="nav-item">Contact</a>
-        </nav>
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="home.html" class="logo">
+                    <img src="images/logo/logo.png" alt="">
+                </a>
+                <a href="project-master.html" class="nav-item">Projects</a>
+                <a href="products.html" class="nav-item">Products</a>
+            </div>
+            
+            <div class="nav-right">
+                <a href="shop.html" class="nav-item">Shop</a>
+                <a href="cart.html" class="nav-item">Cart</a>
+                <button class="search-btn" id="searchBtn">Search</button>
+            </div>
+            
+            <!-- Search Mode -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Start Typing..." id="searchInput">
+            </div>
+        </div>
     </header>
 
     <!-- main-project -->

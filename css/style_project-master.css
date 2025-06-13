@@ -7,7 +7,8 @@ html, body {
 
 .project-container {
     display: flex;
-    height: 92vh;
+    height: 100vh;
+    top: 5vh;
     position: relative;
     width: 98%;
     overflow: hidden;

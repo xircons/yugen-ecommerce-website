@@ -91,18 +91,18 @@ document.querySelectorAll('.project-image').forEach(img => {
 });
 
 document.querySelectorAll('.tp-image').forEach(img => {
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', () => {
-                const index = img.getAttribute('data-index');
-                const urls = {
-                    '0': 'gig.html',
-                    '1': 'smoke-lake-cabin.html',
-                    '2': 'pine-island-cottage.html',
-                    '3': 'house-of-horns.html'
-                };
-                window.location.href = urls[index];
-            });
-        });
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => {
+        const index = img.getAttribute('data-index');
+        const urls = {
+            '0': 'gig.html',
+            '1': 'house-of-horns.html',
+            '2': 'smoke-lake-cabin.html',
+            '3': 'pine-island-cottage.html'
+        };
+        window.location.href = urls[index];
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const mainProjectSections = document.querySelectorAll('.main-project');
@@ -120,4 +120,66 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', setImageHeights);
 
     console.log('script.js loaded');
+});
+
+const header = document.getElementById('header');
+const searchBtn = document.getElementById('searchBtn');
+const searchInput = document.getElementById('searchInput');
+let isSearchMode = false;
+
+// Toggle search mode
+searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (!isSearchMode) {
+        // Open search mode
+        header.classList.add('search-mode');
+        isSearchMode = true;
+        setTimeout(() => {
+            searchInput.focus();
+        }, 300);
+    } else {
+        // Check if there's text to search
+        const searchText = searchInput.value.trim();
+        if (searchText) {
+            // Perform search
+            console.log('Searching for:', searchText);
+            // alert
+            alert('Searching for: ' + searchText);
+            
+            // Close search mode after search
+            header.classList.remove('search-mode');
+            isSearchMode = false;
+            searchInput.value = '';
+        } else {
+            // No text, just close search mode
+            header.classList.remove('search-mode');
+            isSearchMode = false;
+        }
+    }
+});
+
+// Close search on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isSearchMode) {
+        header.classList.remove('search-mode');
+        isSearchMode = false;
+        searchInput.value = '';
+    }
+});
+
+// Handle search input
+searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        if (searchInput.value.trim()) {
+            console.log('Searching for:', searchInput.value);
+            // alert
+            alert('Searching for: ' + searchInput.value); 
+            
+            header.classList.remove('search-mode');
+            isSearchMode = false;
+            searchInput.value = '';
+        }
+    }
 });
